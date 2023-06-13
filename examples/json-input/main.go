@@ -6,10 +6,10 @@ import (
 	"os"
 	"strings"
 
-	pdf "github.com/adrg/go-wkhtmltopdf"
+	pdf "github.com/litesrv/go-wkhtmltopdf"
 )
 
-// For the full list of options, see pkg.go.dev/github.com/adrg/go-wkhtmltopdf.
+// For the full list of options, see pkg.go.dev/github.com/litesrv/go-wkhtmltopdf.
 // NOTE: pdf.ConverterOpts and pdf.ObjectOpts also support YAML unmarshalling.
 var jsonInput = strings.NewReader(`{
 	"converterOpts": {

@@ -10,7 +10,7 @@ import (
 	"os/signal"
 	"runtime"
 
-	pdf "github.com/adrg/go-wkhtmltopdf"
+	pdf "github.com/litesrv/go-wkhtmltopdf"
 )
 
 func init() {

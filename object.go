@@ -61,6 +61,10 @@ type Header struct {
 	// E.g.: 12.
 	FontSize uint64 `json:"fontSize" yaml:"fontSize"`
 
+	// The system font color to use for headers/footers.
+	// E.g.: "#FFFFFF".
+	FontColor string `json:"fontColor" yaml:"fontColor"`
+
 	// Content to print on each of the available regions of the header/footer.
 	// Substitution variables that can be used in the content fields:
 	//  - [page]       The number of the current page.
@@ -193,34 +197,34 @@ type ObjectOpts struct {
 // NewObjectOpts returns a new instance of object options, configured
 // using sensible defaults.
 //
-//   Defaults options:
+//	Defaults options:
 //
-//   UseExternalLinks:  true
-//   UseLocalLinks:     true
-//   IncludeInOutline:  true
-//   CountPages:        true
-//   JavascriptDelay:   300
-//   Zoom:              1
-//   StopSlowScripts:   true
-//   ErrorAction:       ActionAbort
-//   PrintBackground:   true
-//   LoadImages:        true
-//   EnableJavascript:  true
-//   UseSmartShrinking: true
-//   DefaultEncoding:   "utf-8"
-//   TOC:
-//   	UseDottedLines:       true
-//   	Title:                "Table of Contents"
-//   	GenerateForwardLinks: true
-//   	GenerateBackLinks:    true
-//   	Indentation:          "1em"
-//   	FontScale:            1
-//   Header:
-//   	Font:     "Arial"
-//   	FontSize: 12
-//   Footer:
-//   	Font:     "Arial"
-//   	FontSize: 12
+//	UseExternalLinks:  true
+//	UseLocalLinks:     true
+//	IncludeInOutline:  true
+//	CountPages:        true
+//	JavascriptDelay:   300
+//	Zoom:              1
+//	StopSlowScripts:   true
+//	ErrorAction:       ActionAbort
+//	PrintBackground:   true
+//	LoadImages:        true
+//	EnableJavascript:  true
+//	UseSmartShrinking: true
+//	DefaultEncoding:   "utf-8"
+//	TOC:
+//		UseDottedLines:       true
+//		Title:                "Table of Contents"
+//		GenerateForwardLinks: true
+//		GenerateBackLinks:    true
+//		Indentation:          "1em"
+//		FontScale:            1
+//	Header:
+//		Font:     "Arial"
+//		FontSize: 12
+//	Footer:
+//		Font:     "Arial"
+//		FontSize: 12
 func NewObjectOpts() *ObjectOpts {
 	return &ObjectOpts{
 		UseExternalLinks:  true,
@@ -386,6 +390,7 @@ func (o *Object) setOptions() error {
 		// Header options.
 		newSetOp("header.fontName", o.Header.Font, optTypeString, setter, false),
 		newSetOp("header.fontSize", o.Header.FontSize, optTypeUint, setter, false),
+		newSetOp("header.color", o.Header.FontColor, optTypeString, setter, false),
 		newSetOp("header.left", o.Header.ContentLeft, optTypeString, setter, true),
 		newSetOp("header.center", o.Header.ContentCenter, optTypeString, setter, true),
 		newSetOp("header.right", o.Header.ContentRight, optTypeString, setter, true),
@@ -396,6 +401,7 @@ func (o *Object) setOptions() error {
 		// Footer options.
 		newSetOp("footer.fontName", o.Footer.Font, optTypeString, setter, false),
 		newSetOp("footer.fontSize", o.Footer.FontSize, optTypeUint, setter, false),
+		newSetOp("footer.color", o.Footer.FontColor, optTypeString, setter, false),
 		newSetOp("footer.left", o.Footer.ContentLeft, optTypeString, setter, true),
 		newSetOp("footer.center", o.Footer.ContentCenter, optTypeString, setter, true),
 		newSetOp("footer.right", o.Footer.ContentRight, optTypeString, setter, true),
