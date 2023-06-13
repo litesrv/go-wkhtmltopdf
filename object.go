@@ -390,7 +390,7 @@ func (o *Object) setOptions() error {
 		// Header options.
 		newSetOp("header.fontName", o.Header.Font, optTypeString, setter, false),
 		newSetOp("header.fontSize", o.Header.FontSize, optTypeUint, setter, false),
-		newSetOp("header.color", o.Header.FontColor, optTypeString, setter, false),
+		newSetOp("header.fontColor", o.Header.FontColor, optTypeString, setter, false),
 		newSetOp("header.left", o.Header.ContentLeft, optTypeString, setter, true),
 		newSetOp("header.center", o.Header.ContentCenter, optTypeString, setter, true),
 		newSetOp("header.right", o.Header.ContentRight, optTypeString, setter, true),
@@ -401,7 +401,7 @@ func (o *Object) setOptions() error {
 		// Footer options.
 		newSetOp("footer.fontName", o.Footer.Font, optTypeString, setter, false),
 		newSetOp("footer.fontSize", o.Footer.FontSize, optTypeUint, setter, false),
-		newSetOp("footer.color", o.Footer.FontColor, optTypeString, setter, false),
+		newSetOp("footer.fontColor", o.Footer.FontColor, optTypeString, setter, false),
 		newSetOp("footer.left", o.Footer.ContentLeft, optTypeString, setter, true),
 		newSetOp("footer.center", o.Footer.ContentCenter, optTypeString, setter, true),
 		newSetOp("footer.right", o.Footer.ContentRight, optTypeString, setter, true),
